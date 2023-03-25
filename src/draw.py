@@ -9,7 +9,7 @@ def stage_boxes(pygame, surface, states):
     # Initializing Color
     black = (0, 0, 0)
 
-    font = pygame.font.SysFont('consolas', 290)
+    font = pygame.font.SysFont('noto', 290)
 
     # Draw A
     selected_color = state_to_color(states[0])
