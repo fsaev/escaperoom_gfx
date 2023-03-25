@@ -13,24 +13,22 @@ class commands(enum.IntEnum):
     CMD_OVERRIDE = 2,
     CMD_STOP = 3
 
-pygame.init()# Setting your screen size with a tuple of the screen width and screen height
-surface = pygame.display.set_mode((1920,1080), HWSURFACE|DOUBLEBUF|RESIZABLE)# Setting a random caption title for your pygame graphical window.
-work_surface = surface.copy()
-pygame.display.set_caption("Safer Escape Room")# Update your screen when required
-
-running = True
+#com = Com("COM17")
 
 game_duration = 5.2 * 60 * 1000 # 30 minutes
 start_time = (time.time() * 1000) + game_duration
-
-
-#com = Com("COM17")
 
 game_state = [box_states.UNSOLVED, box_states.UNSOLVED, box_states.UNSOLVED, box_states.UNSOLVED, box_states.UNSOLVED]
 
 async def gfx_worker():
     execute_time = 0
     running = True
+
+    pygame.init()# Setting your screen size with a tuple of the screen width and screen height
+    surface = pygame.display.set_mode((1920,1080), HWSURFACE|DOUBLEBUF|RESIZABLE)# Setting a random caption title for your pygame graphical window.
+    work_surface = surface.copy()
+    pygame.display.set_caption("Safer Escape Room")# Update your screen when required
+
     while(running):
         # Did the user click the window close button?
         for event in pygame.event.get():
