@@ -13,5 +13,7 @@ def state_to_color(box_state):
         return (255, 0, 0) # RGB red
     elif(box_state == box_states.IN_PROGRESS):
         return (255, 161, 0) # RGB amber
+    elif(box_state == box_states.TIMEOUT):
+        return (255, 0, 0) # RGB red
     elif(box_state == box_states.SOLVED):
         return (0, 255, 0) # RGB green
